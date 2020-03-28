@@ -2,7 +2,7 @@
 
 - `yarn global add gulp` _(Skip if you already have gulp installed)_
 
-- `yarn` _(Install dependencies)_
+- `yarn install` _(Install dependencies)_
 
 - `yarn run dev` _(Run dev environment)_
 
