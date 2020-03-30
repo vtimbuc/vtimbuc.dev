@@ -1,3 +1,5 @@
+![Deploy to Production](https://github.com/vtimbuc/vtimbuc/workflows/Deploy%20to%20Production/badge.svg)
+
 ## Quick start
 
 - `yarn global add gulp` _(Skip if you already have gulp installed)_
