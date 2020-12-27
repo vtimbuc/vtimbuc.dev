@@ -42,4 +42,4 @@ jobs:
 
       - name: Deploy dist files
         run: |
-          scp -r dist ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SITE_PATH }}
+          scp -r dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SITE_PATH }}
