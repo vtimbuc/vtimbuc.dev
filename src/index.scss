@@ -1,0 +1,214 @@
+:root {
+  --color: #000000;
+  --bg-color: #ffffff;
+  --font-size: 1rem;
+
+  @media (prefers-color-scheme: dark) {
+    --color: #ffffff;
+    --bg-color: #000000;
+  }
+
+  @media (min-width: 600px) and (min-height: 600px) {
+    --font-size: 1.25rem;
+  }
+
+  @media (min-width: 800px) and (min-height: 800px) {
+    --font-size: 1.5rem;
+  }
+
+  @media (min-width: 1000px) and (min-height: 1000px) {
+    --font-size: 1.75rem;
+  }
+
+  @media (min-width: 1200px) and (min-height: 1200px) {
+    --font-size: 2rem;
+  }
+}
+
+.color-scheme-light {
+  --color: #000000;
+  --bg-color: #ffffff;
+}
+
+.color-scheme-dark {
+  --color: #ffffff;
+  --bg-color: #000000;
+}
+
+@import 'normalize.css';
+
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  position: relative;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  font-size: var(--font-size);
+  line-height: 1.5;
+  color: var(--color);
+  background-color: var(--bg-color);
+  transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+p {
+  margin: 0 0 0.5em;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  vertical-align: top;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0.1em;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color);
+    transform: scale(0) rotate(-2deg);
+    transition: transform 0.25s ease;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      transform: scale(1) rotate(-2deg);
+    }
+  }
+}
+
+:focus {
+  outline: 0.1em solid var(--color);
+}
+
+:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+:focus-visible {
+  outline: 0.1em solid var(--color);
+}
+
+::selection {
+  color: var(--bg-color);
+  background: var(--color);
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2.5rem 1.25rem;
+}
+
+.logo {
+  display: block;
+  width: 6.25em;
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 3.75em;
+  fill: currentColor;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.25em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 0 0 3em;
+  font-size: 1.25em;
+  text-align: center;
+
+  span {
+    opacity: 0.75;
+  }
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .dark {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .light {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dark {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .color-scheme-light & {
+    .light {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .dark {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .color-scheme-dark & {
+    .light {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dark {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

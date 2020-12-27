@@ -1,0 +1,25 @@
+{
+  "name": "vtimbuc.dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtimbuc/vtimbuc.dev.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.2.1",
+    "sass": "^1.30.0"
+  }
+}
