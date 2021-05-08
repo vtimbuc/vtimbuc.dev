@@ -1,11 +1,15 @@
 :root {
   --color: #000000;
   --bg-color: #ffffff;
-  --font-size: 1rem;
+  --font-size: 0.75rem;
 
   @media (prefers-color-scheme: dark) {
     --color: #ffffff;
     --bg-color: #000000;
+  }
+
+  @media (min-width: 375px) {
+    --font-size: 1rem;
   }
 
   @media (min-width: 600px) and (min-height: 600px) {
@@ -37,6 +41,61 @@
 
 @import 'normalize.css';
 
+@font-face {
+  font-family: 'MonoLisa';
+  src: url('/fonts/MonoLisa-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Monolisa';
+  src: url('/fonts/MonoLisa-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: block;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.25;
+    transform: translate(-0.1em, -0.1em);
+  }
+  20% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  30% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.35;
+    transform: translate(-0.1em, -0.1em);
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0;
+    transform: none;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
 * {
   &,
   &::before,
@@ -47,9 +106,9 @@
 
 body {
   position: relative;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
+  font-family: 'MonoLisa', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
   font-size: var(--font-size);
   line-height: 1.5;
   color: var(--color);
@@ -62,29 +121,26 @@ p {
 
 a {
   position: relative;
-  display: inline-block;
-  text-decoration: none;
   color: inherit;
-  vertical-align: top;
-  overflow: hidden;
+  text-decoration: none;
 
   &::before {
     content: '';
     position: absolute;
-    bottom: 0.1em;
-    left: 0;
+    bottom: 0;
+    left: 0.5em;
     width: 100%;
-    height: 0.1em;
+    height: 50%;
     background-color: var(--color);
-    transform: scale(0) rotate(-2deg);
-    transition: transform 0.25s ease;
+    opacity: 0.15;
     pointer-events: none;
+    z-index: -1;
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     &::before {
-      transform: scale(1) rotate(-2deg);
+      animation: flicker 0.25s linear;
+      animation-fill-mode: none;
     }
   }
 }
