@@ -1,7 +1,7 @@
-type ColorScheme = 'light' | 'dark'
+const body = document.querySelector('body')
+const themeToggle = document.querySelector('.theme-toggle')
 
-const body = document.getElementsByTagName('body')[0]
-let colorScheme = localStorage.getItem('color-scheme') as ColorScheme
+let colorScheme = localStorage.getItem('color-scheme')
 
 if (colorScheme === 'light' || colorScheme === 'dark') {
   body.classList.add(`color-scheme-${colorScheme}`)
@@ -13,17 +13,21 @@ if (colorScheme === 'light' || colorScheme === 'dark') {
   }
 }
 
-const setColorScheme = (color: ColorScheme) => {
-  body.classList.remove(`color-scheme-${color === 'dark' ? 'light' : 'dark'}`)
+const setColorScheme = (color) => {
+  body.classList.remove(`color-scheme-${colorScheme}`)
   body.classList.add(`color-scheme-${color}`)
+
   localStorage.setItem('color-scheme', color)
+
   colorScheme = color
 }
 
-document.querySelector('.theme-toggle').addEventListener('click', () => {
+const toggleColorScheme = () => {
   if (colorScheme === 'dark') {
     setColorScheme('light')
   } else {
     setColorScheme('dark')
   }
-})
+}
+
+themeToggle.addEventListener('click', toggleColorScheme)

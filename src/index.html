@@ -16,33 +16,7 @@
 
   <body>
     <div class="wrapper">
-      <div class="content">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 654" class="logo">
-          <g class="left">
-            <polygon points="100 0 0 0 304.919 653.901 354.919 546.676 100 0" />
-            <polygon points="230 0 130 0 369.919 514.508 419.919 407.283 230 0" />
-            <polygon points="360 0 260 0 434.919 375.115 484.919 267.89 360 0" />
-          </g>
-
-          <g class="right">
-            <polygon points="740 0 640 0 335.035 654 435.035 654 740 0" />
-            <polygon points="870 0 770 0 465.035 654 565.035 654 870 0" />
-            <polygon points="1000 0 900 0 595.035 654 695.035 654 1000 0" />
-          </g>
-        </svg>
-
-        <h1 class="title">Valeriu Timbuc</h1>
-
-        <p class="subtitle">
-          Front-End Developer <span>&commat;</span> <a href="https://lab19.dev/">lab19.dev</a>
-        </p>
-
-        <p class="email">hello&commat;vtimbuc&period;dev</p>
-
-        <a href="https://github.com/vtimbuc">GitHub</a>
-      </div>
-
-      <button class="theme-toggle" role="button" aria-label="Toggle Color Scheme">
+      <button class="theme-toggle" aria-label="Toggle Color Scheme">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -75,8 +49,45 @@
           />
         </svg>
       </button>
+
+      <main class="content">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1000 654"
+          class="logo"
+          aria-hidden="true"
+        >
+          <g class="left">
+            <polygon points="100 0 0 0 304.919 653.901 354.919 546.676 100 0" />
+            <polygon
+              points="230 0 130 0 369.919 514.508 419.919 407.283 230 0"
+              style="opacity: 0.9"
+            />
+            <polygon
+              points="360 0 260 0 434.919 375.115 484.919 267.89 360 0"
+              style="opacity: 0.8"
+            />
+          </g>
+
+          <g class="right">
+            <polygon points="740 0 640 0 335.035 654 435.035 654 740 0" />
+            <polygon points="870 0 770 0 465.035 654 565.035 654 870 0" style="opacity: 0.9" />
+            <polygon points="1000 0 900 0 595.035 654 695.035 654 1000 0" style="opacity: 0.8" />
+          </g>
+        </svg>
+
+        <h1 class="title">Valeriu Timbuc</h1>
+
+        <p class="subtitle">
+          Front-End Developer <span>&commat;</span> <a href="https://lab19.dev/">lab19.dev</a>
+        </p>
+
+        <span class="email">hello&commat;vtimbuc&period;dev</span>
+
+        <a href="https://github.com/vtimbuc">GitHub</a>
+      </main>
     </div>
 
-    <script src="index.ts"></script>
+    <script src="index.js"></script>
   </body>
 </html>

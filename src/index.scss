@@ -1,11 +1,11 @@
 :root {
-  --color: #000000;
-  --bg-color: #ffffff;
+  --color: #0d0d0d;
+  --bg-color: #fcfcfc;
   --font-size: 0.75rem;
 
   @media (prefers-color-scheme: dark) {
-    --color: #ffffff;
-    --bg-color: #000000;
+    --color: #fcfcfc;
+    --bg-color: #0d0d0d;
   }
 
   @media (min-width: 375px) {
@@ -30,16 +30,14 @@
 }
 
 .color-scheme-light {
-  --color: #000000;
-  --bg-color: #ffffff;
+  --color: #0d0d0d;
+  --bg-color: #fcfcfc;
 }
 
 .color-scheme-dark {
-  --color: #ffffff;
-  --bg-color: #000000;
+  --color: #fcfcfc;
+  --bg-color: #0d0d0d;
 }
-
-@import 'normalize.css';
 
 @font-face {
   font-family: 'MonoLisa';
@@ -51,7 +49,7 @@
 }
 
 @font-face {
-  font-family: 'Monolisa';
+  font-family: 'MonoLisa';
   src: url('fonts/MonoLisa-Bold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
@@ -59,51 +57,15 @@
   font-display: block;
 }
 
-@keyframes flicker {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.25;
-    transform: translate(-0.1em, -0.1em);
-  }
-  20% {
-    opacity: 0;
-    transform: translate(0, 0);
-  }
-  30% {
-    opacity: 0.5;
-  }
-  40% {
-    opacity: 0.15;
-  }
-  50% {
-    opacity: 0.35;
-    transform: translate(-0.1em, -0.1em);
-  }
-  60% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 0.5;
-  }
-  80% {
-    opacity: 0;
-    transform: none;
-  }
-  100% {
-    opacity: 0.5;
-  }
+@import 'normalize.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-* {
-  &,
-  &::before,
-  &::after {
-    box-sizing: border-box;
-  }
-}
-
+// Base
 body {
   position: relative;
   font-family: 'MonoLisa', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
@@ -145,6 +107,7 @@ a {
   }
 }
 
+// Focus
 :focus {
   outline: 0.1em solid var(--color);
 }
@@ -157,11 +120,13 @@ a {
   outline: 0.1em solid var(--color);
 }
 
+// Selection
 ::selection {
   color: var(--bg-color);
   background: var(--color);
 }
 
+// Components
 .wrapper {
   overflow: hidden;
 }
@@ -202,6 +167,7 @@ a {
   }
 }
 
+// Theme Toggle
 .theme-toggle {
   position: absolute;
   top: 0.75rem;
@@ -265,5 +231,43 @@ a {
       opacity: 0;
       visibility: hidden;
     }
+  }
+}
+
+// Flicker Animation
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.25;
+    transform: translate(-0.1em, -0.1em);
+  }
+  20% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  30% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.35;
+    transform: translate(0.1em, -0.1em);
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0;
+    transform: none;
+  }
+  100% {
+    opacity: 0.5;
   }
 }
