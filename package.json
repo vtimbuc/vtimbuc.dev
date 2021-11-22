@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "eslint src/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,8 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.1",
+    "eslint": "^8.3.0",
+    "eslint-config-prettier": "^8.3.0",
     "parcel": "^2.0.1",
     "prettier": "^2.4.1"
   }
