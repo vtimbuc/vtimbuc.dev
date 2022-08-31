@@ -15,10 +15,10 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.2",
-    "eslint": "^8.18.0",
+    "@parcel/transformer-sass": "^2.7.0",
+    "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
-    "parcel": "^2.6.2",
+    "parcel": "^2.7.0",
     "prettier": "^2.7.1"
   }
 }
