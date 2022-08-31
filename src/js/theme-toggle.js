@@ -1,4 +1,4 @@
-const body = document.querySelector('body')
+const body = document.getElementsByTagName('body')[0]
 const themeToggle = document.querySelector('.theme-toggle')
 
 let colorScheme = localStorage.getItem('color-scheme')

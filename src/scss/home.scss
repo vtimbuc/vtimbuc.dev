@@ -1,0 +1,35 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2.5rem 1.25rem;
+}
+
+.logo {
+  display: block;
+  width: 6.25em;
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 3.75em;
+  fill: currentColor;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.25em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 0 0 3em;
+  font-size: 1.25em;
+  text-align: center;
+
+  span {
+    opacity: 0.75;
+  }
+}

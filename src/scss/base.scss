@@ -1,4 +1,4 @@
-@import '../node_modules/normalize.css/normalize.css';
+@import '../../node_modules/normalize.css/normalize.css';
 
 :root {
   --color: #0d0d0d;
@@ -43,7 +43,7 @@
 
 @font-face {
   font-family: 'MonoLisa';
-  src: url('fonts/MonoLisa-Regular.woff2') format('woff2');
+  src: url('../fonts/MonoLisa-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -52,7 +52,7 @@
 
 @font-face {
   font-family: 'MonoLisa';
-  src: url('fonts/MonoLisa-Bold.woff2') format('woff2');
+  src: url('../fonts/MonoLisa-Bold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -131,109 +131,6 @@ a {
   overflow: hidden;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  padding: 2.5rem 1.25rem;
-}
-
-.logo {
-  display: block;
-  width: 6.25em;
-  max-width: 100%;
-  height: auto;
-  margin: 0 0 3.75em;
-  fill: currentColor;
-}
-
-.title {
-  margin: 0;
-  font-size: 2.25em;
-  font-weight: bold;
-  text-align: center;
-}
-
-.subtitle {
-  margin: 0 0 3em;
-  font-size: 1.25em;
-  text-align: center;
-
-  span {
-    opacity: 0.75;
-  }
-}
-
-// Theme Toggle
-.theme-toggle {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  width: 1.75rem;
-  height: 1.75rem;
-  margin: 0;
-  padding: 0;
-  color: inherit;
-  background: none;
-  border: 0;
-  cursor: pointer;
-
-  svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 1em;
-    height: 1em;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .dark {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .light {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .dark {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
-  .color-scheme-light & {
-    .light {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .dark {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  .color-scheme-dark & {
-    .light {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .dark {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-}
-
 // Flicker Animation
 @keyframes flicker {
   0% {
@@ -271,3 +168,5 @@ a {
     opacity: 0.5;
   }
 }
+
+@import 'theme-toggle';

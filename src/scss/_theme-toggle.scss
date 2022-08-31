@@ -1,0 +1,65 @@
+.theme-toggle {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .dark {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .light {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dark {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .color-scheme-light & {
+    .light {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .dark {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .color-scheme-dark & {
+    .light {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dark {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

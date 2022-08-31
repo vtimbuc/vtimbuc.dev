@@ -2,8 +2,8 @@
   "name": "vtimbuc.dev",
   "license": "ISC",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "dev": "parcel src/pages/*.html",
+    "build": "parcel build src/pages/*.html",
     "format": "prettier --write .",
     "lint": "eslint src/**/*.js"
   },
